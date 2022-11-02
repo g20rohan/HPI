@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alzheimer Stage Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:#00bfff;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:white;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#00bfff;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:white;
+  color:white;
+}
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#00bfff;">
+
+<div style="background-color:#00bfff;padding:15px;text-align:center;color:white;">
+  <h1>Alzheimer Stage Detection</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="right">
+    <h2>What is Alzheimer ?</h2>
+    <p>Alzheimer's is a type of dementia that affects memory, thinking and behavior. Symptoms eventually grow severe enough to interfere with daily tasks.<br>It is the most common cause of dementia, a general term for memory loss and other cognitive abilities serious enough to interfere with daily life. Alzheimer's disease accounts for 60-80% of dementia cases.</p>
+  </div>
+
+  <div class="main" align="center">
+    <h2>Input Image</h2>
+    <img src="{{url_for('static', filename=img)}}" alt="Image"><br>
+      <p><h2>Prediction: {{labelname}}</h2></p>
+      <!--<p>i] Mild Demented % = {{mild}} ii] Non Demented % = {{non}} iii] Very Mild Demented % = {{very}}</p>-->
+  </div>
+
+  <div class="menu">
+    <a href="/">Home Page</a>
+  </div>
+    <div class="right">
+    <h2>About</h2>
+    <p>The portal is freely available for doctors and patients to identify the Stage of Alzheimer's Disease.</p>
+        <p>Steps:</p>
+        <p>1) Browse the MRI Image for Stage Detection</p>
+        <p>2) Click on upload</p>
+        <p>The system will predict and output the stage of Alzheimer.</p>
+  </div>
+</div>
+
+<div style="background-color:#00bfff;text-align:center;padding:10px;margin-top:7px;color:white;">© 2020 copyright VITStudentsResearchWork</div>
+
+</body>
+</html>
