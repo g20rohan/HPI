@@ -121,8 +121,8 @@ def ResNet50(input_shape, num_classes=10):
 CLASS_INDEX = None
 execution_path = os.getcwd()
 
-MODEL_PATH = os.path.join(execution_path, "C:/Users/g10ro/Documents/Projects/Prof/trained_models/RN50_Raw_Data.h5")
-JSON_PATH = os.path.join(execution_path, "C:/Users/g10ro/Documents/Projects/Prof/trained_models/model_class.json")
+MODEL_PATH = os.path.join(execution_path, "RN50_Raw_Data.h5")
+JSON_PATH = os.path.join(execution_path, "trained_models/model_class.json")
 
 
 def preprocess_input(x):
@@ -168,9 +168,9 @@ def run_inference():
     for result in predictiondata:
         print(str(result[0]), " : ", str(result[1] * 100))
 def getvalue():
-    shutil.rmtree('C:/Users/g10ro/Documents/Projects/Prof/static')
+    shutil.rmtree('static')
     directory = "static"
-    parent_dir = "C:/Users/g10ro/Documents/Projects/Prof/"
+    parent_dir = "/"
     path = os.path.join(parent_dir, directory)
     os.mkdir(path)
 
@@ -184,7 +184,7 @@ def getvalue():
     print("Save it to:", destination)
     upload.save(destination)
     activation = lambda x: tf.keras.activations.relu(x, alpha=0.1)
-    #model = load_model('C:/Users/g10ro/Documents/Projects/Alzheimer/trained_models/Alzheimer_Stage_detection_lrelu.h5',custom_objects={'<lambda>': activation})
+   
     model = ResNet50(input_shape=(224, 224, 3), num_classes=10)
     model.load_weights(MODEL_PATH)
     image_to_predict = image.load_img(destination, target_size=(
