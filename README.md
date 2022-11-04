@@ -1,2 +1,2 @@
-# Prof
+# Please read paper for info
  
